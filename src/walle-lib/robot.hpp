@@ -35,4 +35,6 @@ private:
     double m_omega{0};  /// vitesse angulaire
 };
 
+#include "robot.cpp"
+
 #endif

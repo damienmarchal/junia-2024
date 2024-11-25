@@ -20,8 +20,5 @@ int main(int argc, char **argv)
     {
         un_robot.set_speed(0.5);
         un_robot.run(dt);
-    }
-	Robot robot_1;
-
-	
+    }	
 }
