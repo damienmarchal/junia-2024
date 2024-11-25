@@ -5,7 +5,10 @@ project(walle-app.exe LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# La target ici est walle-lib
 add_library(walle-lib SHARED
+            src/walle-lib/robot.cpp
+            src/walle-lib/robot.hpp
             src/walle-lib/vector2.cpp
             src/walle-lib/vector2.hpp
             src/walle-lib/robot.cpp

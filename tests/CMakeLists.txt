@@ -18,6 +18,7 @@ enable_testing()
 
 add_executable(all-tests.exe
   src/test_vector2.cpp
+  src/test_robot.cpp
 )
 
 target_link_libraries(
