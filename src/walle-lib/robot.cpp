@@ -29,15 +29,3 @@ void Robot::run(double dt)
     m_y += sin(m_theta) * m_speed * dt ;
     m_theta += m_omega * dt ;
 }
-
-#include "robot.hpp"
-
-void avancer(double vitesse) {
-
-}
-void tourner(double angle) {
-
-}
-void stop() {
-    
-}
