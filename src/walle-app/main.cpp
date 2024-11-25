@@ -9,6 +9,7 @@ int main(int argc, char** argv)
     Robot un_robot;
 
 	std::cout << "Hello world" << std::endl;
+    std::cout << "Hello Thomas" << std::endl;
 
     /// dt en seconde
     double dt = 0.01;

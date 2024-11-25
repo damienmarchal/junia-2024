@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\walle-app"
   ],
+  "SelectedNode": "\\src\\walle-app\\main.cpp",
   "PreviewInSolutionExplorer": false
 }
