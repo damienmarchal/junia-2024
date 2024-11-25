@@ -64,3 +64,4 @@ public:
     void set_seed();
 };
 
+#include "robot.cpp"
