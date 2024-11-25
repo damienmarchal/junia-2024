@@ -6,7 +6,11 @@
 /// Les unités sont en mètre,
 int main(int argc, char** argv)
 {
-    Robot un_robot;
+    // Créé en mémoire l'environment;
+    Environment un_environment;
+
+    // Appellé le constructeur en lui passant en paramètre l'environment.
+    PlantingRobot un_planting_robot {&un_environment};
 
 	std::cout << "Hello world" << std::endl;
     std::cout << "Hello Thomas" << std::endl;
@@ -16,7 +20,7 @@ int main(int argc, char** argv)
     double t = 0;
     for(t=0;t<10;t+=dt)
     {
-        un_robot.set_speed(0.5);
-        un_robot.run(dt);
+        un_planting_robot.set_speed(0.5);
+        un_planting_robot.set_seed();
     }
 }
