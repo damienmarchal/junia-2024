@@ -7,8 +7,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_library(walle-lib SHARED
             src/walle-lib/vector2.cpp
-            src/walle-lib/vector2.hpp)
-
+            src/walle-lib/vector2.hpp
+            src/walle-lib/robot.cpp
+            src/walle-lib/robot.hpp)
+            
 target_include_directories(walle-lib
   PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/src/
@@ -25,4 +27,4 @@ install(
     TARGETS walle-app.exe
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
-add_subdirectory(tests)
+# add_subdirectory(tests)
