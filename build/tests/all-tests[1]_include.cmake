@@ -1,0 +1,5 @@
+if(EXISTS "C:/Users/tonys/Desktop/M2_projet_Cplusplus/build/tests/all-tests[1]_tests.cmake")
+  include("C:/Users/tonys/Desktop/M2_projet_Cplusplus/build/tests/all-tests[1]_tests.cmake")
+else()
+  add_test(all-tests_NOT_BUILT all-tests_NOT_BUILT)
+endif()

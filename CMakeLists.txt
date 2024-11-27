@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(walle-app.exe LANGUAGES CXX)
+project(walle-app LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -17,15 +17,15 @@ target_include_directories(walle-lib
   ${CMAKE_CURRENT_SOURCE_DIR}/src/
 )
 
-add_executable(walle-app.exe
+add_executable(walle-app
                src/walle-app/main.cpp
              )
 
-target_link_libraries(walle-app.exe
+target_link_libraries(walle-app
                       walle-lib)
 
 install(
-    TARGETS walle-app.exe
+    TARGETS walle-app
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 add_subdirectory(tests)

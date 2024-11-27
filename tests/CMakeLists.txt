@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(all-tests.exe)
+project(all-tests)
 
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
@@ -16,18 +16,18 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(all-tests.exe
+add_executable(all-tests
   src/test_vector2.cpp
   src/test_robot.cpp
 )
 
 target_link_libraries(
-  all-tests.exe
+  all-tests
   walle-lib
   GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(all-tests.exe)
+gtest_discover_tests(all-tests)
 
 
