@@ -9,6 +9,7 @@ int main(int argc, char** argv)
     Robot un_robot;
 
 	std::cout << "Hello world" << std::endl;
+// test modif
 
     /// dt en seconde
     double dt = 0.01;
@@ -17,6 +18,5 @@ int main(int argc, char** argv)
     {
         un_robot.set_speed(0.5);
         un_robot.run(dt);
-        std::cout << "Hello world2" << std::endl;
     }
 }
