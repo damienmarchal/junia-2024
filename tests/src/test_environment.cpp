@@ -8,8 +8,8 @@ TEST(Environnment, test_constructor) {
 
     EXPECT_NEAR(e.left(), -100, 0.00001);
     EXPECT_NEAR(e.right(), 100, 0.00001);
-    EXPECT_NEAR(e.bottom(), -100, 0.00001);
-    EXPECT_NEAR(e.top(), 100, 0.00001);
+    EXPECT_NEAR(e.top(), -100, 0.00001);
+    EXPECT_NEAR(e.bottom(), 100, 0.00001);
 }
 
 TEST(Environnment, test_constructor_invalid_behavior) {

@@ -5,11 +5,16 @@
 class Environment
 {
 public:
-    Environment(double left=-1, double right=-1,
-                double top=-1, double bottom=1);
+    Environment(double left, double right, double top, double bottom);
 
-    double left() { return -1; }
-    double right() { return -1; }
-    double top() { return -1; }
-    double bottom() { return -1; }
+    double left() { return _left; }
+    double right() { return _right; }
+    double top() { return _top; }
+    double bottom() { return _bottom; }
+
+private:
+    double _left;
+    double _right;
+    double _top;
+    double _bottom;
 };
