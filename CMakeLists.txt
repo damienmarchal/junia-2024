@@ -14,14 +14,16 @@ add_library(walle-lib SHARED
             src/walle-lib/vector2.cpp
             src/walle-lib/vector2.hpp)
 
+add_compile_definitions(walle-lib EXPORT)
+
 target_include_directories(walle-lib
   PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/src/
 )
 
 add_executable(walle-app
-               src/walle-app/main.cpp
-             )
+               src/walle-app/main.cpp)
+add_compile_definitions(walle-app IMPORT)
 
 target_link_libraries(walle-app
                       walle-lib)
