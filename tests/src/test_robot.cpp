@@ -34,6 +34,7 @@ TEST(Robot, test_angular_speed) {
 TEST(Robot, test_move_forward) {
     Environment e;
     MonRobotDeTest mon_robot{&e};
+
     float x0 = mon_robot.get_position_x();
     float y0 = mon_robot.get_position_y();
     mon_robot.set_speed(0.5);
@@ -45,6 +46,8 @@ TEST(Robot, test_move_forward) {
     float dy = y1 - y0;
     float d = sqrt(dx*dx + dy*dy);
 
-
     EXPECT_NEAR(d, 0.5*0.01, 0.00001);
+
+    /// TODO n'oublie de finir ce test.
+    EXPECT_FALSE(true);
 }

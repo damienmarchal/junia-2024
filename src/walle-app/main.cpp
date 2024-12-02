@@ -7,7 +7,7 @@
 int main(int argc, char** argv)
 {
     // Créé en mémoire l'environment;
-    Environment un_environment;
+    Environnement un_environment;
 
     // Appellé le constructeur en lui passant en paramètre l'environment.
     PlantingRobot un_planting_robot {&un_environment};
@@ -19,7 +19,7 @@ int main(int argc, char** argv)
     double t = 0;
     for(t=0;t<10;t+=dt)
     {
-        un_planting_robot.set_speed(0.5);
-        un_planting_robot.set_seed();
+        RobotPlanteur1.set_speed(0.5);
+        RobotPlanteur1.set_seed();
     }
 }
