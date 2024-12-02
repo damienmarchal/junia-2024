@@ -15,10 +15,25 @@ TEST(Environnment, test_constructor) {
 TEST(Environnment, test_constructor_invalid_behavior) {
     // Creates an environment of size 200m x 200m but with wrong
     // values.
-    Environment e{100,-100,-100,100};
+    // Environment e{100,-100,-100,100};
 
-    EXPECT_GT(e.left(), e.right());
-    EXPECT_GT(e.top(), e.bottom());
+    // EXPECT_GT(e.left(), e.right());
+    // EXPECT_GT(e.top(), e.bottom());
+
+    try
+    {
+        Environment e{100,-100,-100,100};
+    }
+    catch(const std::invalid_argument& e)
+    {
+        EXPECT_STREQ(e.what(), "Invalid environment - Please check the values");
+    }    
+    catch(...)
+    {
+        FAIL() << "Expected std::invalid_argument";
+    }
+
+    
 }
 
 TEST(Environnment, test_add_element) {
