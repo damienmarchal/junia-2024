@@ -1,7 +1,8 @@
 
 #include "robot.hpp"
+#include <cmath>
 
-double Robot::get_speed()
+double Robot::get_speed() const
 {
     return m_speed;
 }
@@ -13,12 +14,12 @@ void Robot::set_speed(double speed)
 
 void Robot::set_angular_speed(double vitesse_angulaire)
 {
-
+    m_omega = vitesse_angulaire;
 }
 
-double Robot::get_angular_speed()
+double Robot::get_angular_speed() const
 {
-
+return m_omega;
 }
 
 void Robot::stop()
@@ -29,7 +30,7 @@ void Robot::stop()
 
 void Robot::run(double dt)
 {
-    m_x += cos(m_theta) * m_speed * dt ;
-    m_y += sin(m_theta) * m_speed * dt ;
+    Vector2 vitesse = {cos(m_theta) * m_speed, sin(m_theta) * m_speed};
+    position_ = position_ + vitesse * dt;
     m_theta += m_omega * dt ;
 }

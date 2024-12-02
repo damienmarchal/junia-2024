@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <walle-lib/robot.hpp>
+#include <cmath>
 
 class MonRobotDeTest : public Robot
 {
