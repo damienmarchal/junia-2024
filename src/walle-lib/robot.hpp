@@ -27,7 +27,7 @@ public:
     void run(double dt);
 
     /// retourne la capacity de la batterie.
-    virtual double get_battery_capacity() = 0;
+    virtual double get_battery_capacity() {};
 
 /// moi et mes enfants on peut y accéder
 private:
