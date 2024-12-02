@@ -9,6 +9,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(walle-lib SHARED
             src/walle-lib/environment.cpp
             src/walle-lib/environment.hpp
+            src/walle-lib/element.cpp
+            src/walle-lib/element.hpp
             src/walle-lib/robot.cpp
             src/walle-lib/robot.hpp
             src/walle-lib/vector2.cpp
