@@ -13,7 +13,7 @@ int main(int argc, char** argv)
     PlantingRobot un_planting_robot {&un_environment};
 
 	std::cout << "Hello world" << std::endl;
-    std::cout << "Hello Thomas 123" << std::endl;
+    std::cout << "Hello Thomas 123Soleil" << std::endl;
 
     /// dt en seconde
     double dt = 0.01;
