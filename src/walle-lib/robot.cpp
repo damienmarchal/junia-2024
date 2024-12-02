@@ -1,15 +1,6 @@
 #include "robot.hpp"
 
 
-/// -----------------  ELEMENT  -----------------
-void Element::set_position(double x, double y)
-{
-    m_x = x;
-    m_y = y;
-}
-
-
-/// -----------------  ROBOT  -----------------
 double Robot::get_speed()
 {
     return m_speed;

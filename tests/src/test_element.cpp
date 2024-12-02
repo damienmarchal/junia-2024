@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include <walle-lib/robot.hpp>
+#include <walle-lib/element.hpp>
 
 TEST(Element, test_set_type) {
     Environment e;
@@ -21,17 +21,4 @@ TEST(Element, test_set_size) {
 
     element.set_size(0.7);
     EXPECT_NEAR(element.get_size(), 0.7, 0.00001);
-}
-
-TEST(Element, test_set_position) {
-    Environment e;
-    Element element{&e};
-
-    element.set_position(0.5, 0.7);
-    EXPECT_NEAR(element.get_x(), 0.5, 0.00001);
-    EXPECT_NEAR(element.get_y(), 0.7, 0.00001);
-
-    element.set_position(0.7, 0.5);
-    EXPECT_NEAR(element.get_x(), 0.7, 0.00001);
-    EXPECT_NEAR(element.get_y(), 0.5, 0.00001);
 }
