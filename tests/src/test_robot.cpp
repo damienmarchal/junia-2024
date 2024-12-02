@@ -47,3 +47,21 @@ TEST(Robot, test_move_forward) {
 
     EXPECT_NEAR(d, 0.5*0.01, 0.00001);
 }
+
+TEST(Robot, test_get_battery_capacity) {
+    Environment e;
+    MonRobotDeTest mon_robot{&e};
+
+    EXPECT_NEAR(mon_robot.get_battery_capacity(), 0.5, 0.00001);
+}
+
+TEST(Robot, test_set_size) {
+    Environment e;
+    MonRobotDeTest mon_robot{&e};
+
+    mon_robot.set_size(0.5);
+    EXPECT_NEAR(mon_robot.get_size(), 0.5, 0.00001);
+
+    mon_robot.set_size(0.7);
+    EXPECT_NEAR(mon_robot.get_size(), 0.7, 0.00001);
+}
