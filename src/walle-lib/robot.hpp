@@ -1,5 +1,4 @@
-#ifndef ROBOT_HPP
-#define ROBOT_HPP
+#pragma once
 
 #include <cmath>
 #include <string>
@@ -52,5 +51,3 @@ protected:
     Environment *environment{nullptr}; // pointeur
 };
 
-
-#endif
