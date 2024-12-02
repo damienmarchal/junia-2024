@@ -10,6 +10,7 @@ int main(int argc, char** argv)
     Environment un_environment{-100,100,-100,100};
 
 	std::cout << "Hello world" << std::endl;
+    std::cout << "Hello Thomas 123Soleil" << std::endl;
 
     /// dt en seconde
     double dt = 0.01;
