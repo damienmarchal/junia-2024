@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.14)
 
 project(walle-app LANGUAGES CXX)
 
@@ -13,7 +13,7 @@ add_library(walle-lib SHARED
             src/walle-lib/robot.hpp
             src/walle-lib/vector2.cpp
             src/walle-lib/vector2.hpp)
-
+            
 target_include_directories(walle-lib
   PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/src/
@@ -33,9 +33,10 @@ install(
 add_subdirectory(tests)
 
 add_executable(all-tests
-  tests/src/test_robot.cpp
-  tests/src/test_vector2.cpp
   tests/src/test_environnement.cpp
+  tests/src/test_element.cpp
+  tests/src/test_robot.cpp
+  tests/src/test_vector2.cpp  
 )
 
 target_link_libraries(

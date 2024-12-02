@@ -1,15 +1,18 @@
 #include <iostream>
 #include <walle-lib/vector2.hpp>
-
 #include <walle-lib/robot.hpp>
 
-/// Les unités sont en mètre,
-int main(int argc, char** argv)
+/*
+Les unités sont en mètre et radian
+*/
+
+int main(int argc, char **argv)
 {
+    // init code
+	std::cout << "<-- Debut du script... -->" << std::endl;
+
     // Créé en mémoire l'environment;
     Environment un_environment{-100,100,-100,100};
-
-	std::cout << "Hello world" << std::endl;
 
     /// dt en seconde
     double dt = 0.01;
