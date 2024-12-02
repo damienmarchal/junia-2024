@@ -12,7 +12,18 @@ add_library(walle-lib SHARED
             src/walle-lib/robot.cpp
             src/walle-lib/robot.hpp
             src/walle-lib/vector2.cpp
-            src/walle-lib/vector2.hpp)
+            src/walle-lib/vector2.hpp
+        src/walle-lib/Robot_Creuseur.hpp
+        src/walle-lib/Robot_Arroseur.hpp
+        src/walle-lib/Robot_Planteur.hpp
+        src/walle-lib/Robot_Reboucheur.hpp
+        src/walle-lib/Robot_Arroseur.cpp
+        src/walle-lib/Robot_Planteur.cpp
+        src/walle-lib/Robot_Reboucheur.cpp
+        src/walle-lib/Robot_Creuseur.cpp
+        src/walle-lib/Environnement.cpp
+        src/walle-lib/Environnement.hpp
+)
 
 target_include_directories(walle-lib
   PUBLIC
@@ -31,6 +42,18 @@ install(
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 add_subdirectory(tests)
+
+
+add_executable(all-tests
+        tests/src/test_vector2.cpp
+        tests/src/test_robot.cpp
+)
+
+target_link_libraries(
+        all-tests
+        walle-lib
+        GTest::gtest_main
+)
 
 add_executable(all-tests
   tests/src/test_robot.cpp

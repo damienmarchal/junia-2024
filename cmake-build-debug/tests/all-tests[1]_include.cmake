@@ -1,0 +1,5 @@
+if(EXISTS "C:/Users/Utilisateur/CLionProjects/junia-2024/cmake-build-debug/tests/all-tests[1]_tests.cmake")
+  include("C:/Users/Utilisateur/CLionProjects/junia-2024/cmake-build-debug/tests/all-tests[1]_tests.cmake")
+else()
+  add_test(all-tests_NOT_BUILT all-tests_NOT_BUILT)
+endif()

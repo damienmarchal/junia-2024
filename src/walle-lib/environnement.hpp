@@ -12,4 +12,7 @@ public:
     double right() { return -1; }
     double top() { return -1; }
     double bottom() { return -1; }
+    double get_robots();
+private:
+      double TailleCarte{20};
 };

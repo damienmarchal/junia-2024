@@ -2,16 +2,18 @@
 #include <cmath>
 #include <string>
 
-#include "environnement.hpp"
-
 /// Décrire un objet.
 class Robot
 {
-/// tout le monde peut utiliser (même l'extérieur
+/// tout le monde peut utiliser (même l'extérieur)
 public:
     Robot(Environment* e) : environment(e) {};
 
-    void set_speed(double linear_speed);              ///
+    double NumActivatedRobots();
+
+double get_battery_capacity() const;
+
+void set_speed(double linear_speed);              ///
     void set_angular_speed(double angular_speed);    ///
 
     double get_speed();
@@ -31,6 +33,9 @@ public:
 
 /// moi et mes enfants on peut y accéder
 private:
+    ///La taille est en m
+    double taille{0.20};
+    double ActivatedRobots{0};
     double m_x{0};      /// attributs x = x * orientation * vitesse * dt
     double m_y{0};
     double m_theta{0};  /// position angulaire
@@ -41,5 +46,4 @@ private:
 protected:
     Environment* environment {nullptr}; //pointeur
 };
-
 
