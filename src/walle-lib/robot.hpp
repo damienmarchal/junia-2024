@@ -13,6 +13,7 @@ public:
 private:
 };
 
+
 /// ROBOT
 class Robot
 {
@@ -51,6 +52,7 @@ private:
 protected:
     Environment *environment{nullptr}; // pointeur
 };
+
 
 /// ROBOT --> PLANTINGROBOT
 class PlantingRobot : public Robot
