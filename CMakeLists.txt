@@ -7,6 +7,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # La target ici est walle-lib
 add_library(walle-lib SHARED
+            src/walle-lib/environnement.cpp
+            src/walle-lib/environnement.hpp
             src/walle-lib/robot.cpp
             src/walle-lib/robot.hpp
             src/walle-lib/vector2.cpp
@@ -29,3 +31,15 @@ install(
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 add_subdirectory(tests)
+
+add_executable(all-tests
+  tests/src/test_robot.cpp
+  tests/src/test_vector2.cpp
+  tests/src/test_environnement.cpp
+)
+
+target_link_libraries(
+  all-tests
+  walle-lib
+  GTest::gtest_main
+)
