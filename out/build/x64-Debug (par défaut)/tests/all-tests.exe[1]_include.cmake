@@ -1,5 +1,0 @@
-if(EXISTS "C:/Users/Administrateur/source/junia-2024/out/build/x64-Debug (par défaut)/tests/all-tests.exe[1]_tests.cmake")
-  include("C:/Users/Administrateur/source/junia-2024/out/build/x64-Debug (par défaut)/tests/all-tests.exe[1]_tests.cmake")
-else()
-  add_test(all-tests.exe_NOT_BUILT all-tests.exe_NOT_BUILT)
-endif()
