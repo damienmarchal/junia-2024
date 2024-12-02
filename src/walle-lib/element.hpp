@@ -4,7 +4,7 @@
 #include <cmath>
 #include <string>
 
-#include "environnement.hpp"
+#include "environment.hpp"
 
 /// Element de l'environnement
 class Element

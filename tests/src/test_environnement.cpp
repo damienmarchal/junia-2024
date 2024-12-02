@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include <walle-lib/environnement.hpp>
+#include <walle-lib/environment.hpp>
 
 // Validates the behavior of the constructors
 TEST(Environnment, test_constructor) {
