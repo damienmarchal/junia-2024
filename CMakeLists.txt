@@ -12,7 +12,19 @@ add_library(walle-lib SHARED
             src/walle-lib/robot.cpp
             src/walle-lib/robot.hpp
             src/walle-lib/vector2.cpp
-            src/walle-lib/vector2.hpp)
+            src/walle-lib/vector2.hpp
+        src/walle-lib/PlantingRobot.cpp
+        src/walle-lib/PlantingRobot.hpp
+        src/walle-lib/Environment.cpp
+        src/walle-lib/Environment.hpp
+        src/walle-lib/IrrigationRobot.cpp
+        src/walle-lib/IrrigationRobot.hpp
+        src/walle-lib/Plantation.cpp
+        src/walle-lib/Plantation.hpp
+        src/walle-lib/Obstacle.cpp
+        src/walle-lib/Obstacle.hpp
+        src/walle-lib/Digging_Robot.cpp
+        src/walle-lib/Digging_Robot.hpp)
 
 target_include_directories(walle-lib
   PUBLIC

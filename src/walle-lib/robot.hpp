@@ -1,10 +1,14 @@
 #pragma once 
 #include <cmath>
 #include <string>
+#include "Environment.hpp"
 
+<<<<<<< HEAD
+=======
 #include "environnement.hpp"
 
 /// Décrire un objet.
+>>>>>>> upstream/main
 class Robot
 {
 /// tout le monde peut utiliser (même l'extérieur
@@ -41,5 +45,4 @@ private:
 protected:
     Environment* environment {nullptr}; //pointeur
 };
-
 

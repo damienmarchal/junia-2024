@@ -2,6 +2,7 @@
 #include <walle-lib/vector2.hpp>
 
 #include <walle-lib/robot.hpp>
+#include <walle-lib/PlantingRobot.hpp>
 
 /// Les unités sont en mètre,
 int main(int argc, char** argv)
