@@ -10,7 +10,7 @@ public:
 
 // Validates the behavior of the constructors
 TEST(Robot, test_set_speed) {
-    Environment e;
+    Environment e{0.0, 10.0, 0.0, 10.0};
     MonRobotDeTest mon_robot{&e};
 
     mon_robot.set_speed(0.5);
@@ -21,7 +21,7 @@ TEST(Robot, test_set_speed) {
 }
 
 TEST(Robot, test_angular_speed) {
-    Environment e;
+    Environment e{0.0, 10.0, 0.0, 10.0};
     MonRobotDeTest mon_robot{&e};
 
     mon_robot.set_angular_speed(0.5);
@@ -32,7 +32,7 @@ TEST(Robot, test_angular_speed) {
 }
 
 TEST(Robot, test_move_forward) {
-    Environment e;
+    Environment e{0.0, 10.0, 0.0, 10.0};
     MonRobotDeTest mon_robot{&e};
     float x0 = mon_robot.get_position_x();
     float y0 = mon_robot.get_position_y();
@@ -49,14 +49,14 @@ TEST(Robot, test_move_forward) {
 }
 
 TEST(Robot, test_get_battery_capacity) {
-    Environment e;
+    Environment e{0.0, 10.0, 0.0, 10.0};
     MonRobotDeTest mon_robot{&e};
 
     EXPECT_NEAR(mon_robot.get_battery_capacity(), 0.5, 0.00001);
 }
 
 TEST(Robot, test_set_size) {
-    Environment e;
+    Environment e{0.0, 10.0, 0.0, 10.0};
     MonRobotDeTest mon_robot{&e};
 
     mon_robot.set_size(0.5);
