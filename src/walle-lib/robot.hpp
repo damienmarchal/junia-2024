@@ -5,30 +5,21 @@
 #include <string>
 
 /// ENVIRONMENT
-/// ENVIRONMENT
 class Environment
 {
 public:
     void add_seed_at(double x, double y, std::string);
 
 private:
-    void add_seed_at(double x, double y, std::string);
-
-private:
 };
 
-/// ROBOT
 /// ROBOT
 class Robot
 {
     /// tout le monde peut utiliser
-    /// tout le monde peut utiliser
 public:
     Robot(Environment *e) : environment(e) {};
-    Robot(Environment *e) : environment(e) {};
 
-    void set_speed(double linear_speed);
-    void set_angular_speed(double angular_speed);
     void set_speed(double linear_speed);
     void set_angular_speed(double angular_speed);
 
@@ -37,8 +28,6 @@ public:
 
     void stop();
 
-    double get_position_x() { return m_x; }
-    double get_position_y() { return m_y; }
     double get_position_x() { return m_x; }
     double get_position_y() { return m_y; }
 
@@ -50,32 +39,23 @@ public:
     virtual double get_battery_capacity() = 0;
 
     /// seulement moi peut utiliser
-    /// seulement moi peut utiliser
 private:
-    double m_x{0}; /// attributs x = x * orientation * vitesse * dt
     double m_x{0}; /// attributs x = x * orientation * vitesse * dt
     double m_y{0};
     double m_theta{0}; /// position angulaire
-    double m_theta{0}; /// position angulaire
 
     double m_speed{0}; /// vitesse linéaire
     double m_omega{0}; /// vitesse angulaire
-    double m_speed{0}; /// vitesse linéaire
-    double m_omega{0}; /// vitesse angulaire
 
-    /// seulement moi et mes enfants peuvent utiliser
     /// seulement moi et mes enfants peuvent utiliser
 protected:
-    Environment *environment{nullptr}; // pointeur
     Environment *environment{nullptr}; // pointeur
 };
 
 /// ROBOT --> PLANTINGROBOT
-/// ROBOT --> PLANTINGROBOT
 class PlantingRobot : public Robot
 {
 public:
-    PlantingRobot(Environment *env) : Robot(env) {};
     PlantingRobot(Environment *env) : Robot(env) {};
 
     /// Mecanisme d'héritage fait qu'on à accès à tout ce qui est publique.
@@ -87,11 +67,7 @@ public:
 
 private:
     
-
-private:
     
 };
-
-// #include "robot.cpp"
 
 #endif
