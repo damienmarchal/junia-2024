@@ -3,6 +3,8 @@
 
 #include <walle-lib/robot.hpp>
 
+#include "walle-lib/Robot_Planteur.hpp"
+
 /// Les unités sont en mètre,
 int main(int argc, char** argv)
 {
@@ -10,9 +12,7 @@ int main(int argc, char** argv)
     Environment un_environment;
 
     // Appellé le constructeur en lui passant en paramètre l'environment.
-    PlantingRobot un_planting_robot {&un_environment};
-
-	std::cout << "Hello world" << std::endl;
+    PlantingRobot RobotPlanteur1 {&un_environment};
 
     /// dt en seconde
     double dt = 0.01;

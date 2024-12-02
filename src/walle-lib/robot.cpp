@@ -1,7 +1,7 @@
 
 #include "robot.hpp"
 
-double Robot::get_speed()
+double Robot::get_speed() const
 {
     return m_speed;
 }
@@ -9,6 +9,16 @@ double Robot::get_speed()
 void Robot::set_speed(double speed)
 {
     m_speed = speed;
+}
+
+double Robot::get_position_x() const
+{
+    return m_x;
+}
+
+double Robot::get_position_y() const
+{
+    return m_y;
 }
 
 void Robot::set_angular_speed(double vitesse_angulaire)
@@ -34,7 +44,8 @@ void Robot::run(double dt)
     m_theta += m_omega * dt ;
 }
 
-void PlantingRobot::set_seed()
+double Robot::get_battery_capacity() const
 {
-    environment->add_seed_at(get_position_x(), get_position_y(), "Oak");
+    return batterie_act;
 }
+

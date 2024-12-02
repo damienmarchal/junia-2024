@@ -10,7 +10,18 @@ add_library(walle-lib SHARED
             src/walle-lib/robot.cpp
             src/walle-lib/robot.hpp
             src/walle-lib/vector2.cpp
-            src/walle-lib/vector2.hpp)
+            src/walle-lib/vector2.hpp
+        src/walle-lib/Robot_Creuseur.hpp
+        src/walle-lib/Robot_Arroseur.hpp
+        src/walle-lib/Robot_Planteur.hpp
+        src/walle-lib/Robot_Reboucheur.hpp
+        src/walle-lib/Robot_Arroseur.cpp
+        src/walle-lib/Robot_Planteur.cpp
+        src/walle-lib/Robot_Reboucheur.cpp
+        src/walle-lib/Robot_Creuseur.cpp
+        src/walle-lib/Environnement.cpp
+        src/walle-lib/Environnement.hpp
+)
 
 target_include_directories(walle-lib
   PUBLIC
