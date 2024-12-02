@@ -33,6 +33,7 @@ add_subdirectory(tests)
 add_executable(all-tests
   tests/src/test_vector2.cpp
   tests/src/test_robot.cpp
+  tests/src/test_element.cpp
 )
 
 target_link_libraries(

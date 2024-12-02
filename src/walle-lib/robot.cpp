@@ -8,6 +8,13 @@ void Environment::add_seed_at(double x, double y, std::string)
 }
 
 
+/// -----------------  ELEMENT  -----------------
+void Element::set_position(double x, double y)
+{
+    m_x = x;
+    m_y = y;
+}
+
 
 /// -----------------  ROBOT  -----------------
 double Robot::get_speed()
