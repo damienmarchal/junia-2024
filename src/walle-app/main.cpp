@@ -1,12 +1,11 @@
 #include <iostream>
-#include "../walle-lib/vector2.hpp"
-#include "../walle-lib/robot.hpp"
-
+#include <walle-lib/vector2.hpp>
+#include <walle-lib/robot.hpp>
 
 /*
 Les unités sont en mètre et radian
-
 */
+
 int main(int argc, char **argv)
 {
     // init code

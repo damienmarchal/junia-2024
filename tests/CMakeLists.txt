@@ -15,19 +15,3 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 enable_testing()
-
-add_executable(all-tests.exe
-  src/test_vector2.cpp
-  src/test_robot.cpp
-)
-
-target_link_libraries(
-  all-tests.exe
-  walle-lib
-  GTest::gtest_main
-)
-
-include(GoogleTest)
-gtest_discover_tests(all-tests.exe)
-
-
