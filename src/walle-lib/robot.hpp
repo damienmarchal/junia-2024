@@ -4,16 +4,7 @@
 #include <cmath>
 #include <string>
 
-/// ENVIRONMENT
-class Environment
-{
-public:
-    void add_seed_at(double x, double y, std::string);
-
-
-
-private:
-};
+#include "environnement.hpp"
 
 
 /// Element de l'environnement
@@ -92,23 +83,5 @@ protected:
     Environment *environment{nullptr}; // pointeur
 };
 
-
-/// ROBOT --> PLANTINGROBOT
-class PlantingRobot : public Robot
-{
-public:
-    PlantingRobot(Environment *env) : Robot(env) {};
-
-    /// Mecanisme d'héritage fait qu'on à accès à tout ce qui est publique.
-    double get_battery_capacity()
-    {
-        return 0.5;
-    }
-    void set_seed();
-
-private:
-    
-    
-};
 
 #endif

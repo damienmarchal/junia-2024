@@ -1,13 +1,6 @@
 #include "robot.hpp"
 
 
-/// -----------------  ENVIRONMENT  -----------------
-void Environment::add_seed_at(double x, double y, std::string)
-{
-    // TODO
-}
-
-
 /// -----------------  ELEMENT  -----------------
 void Element::set_position(double x, double y)
 {
@@ -48,10 +41,4 @@ void Robot::run(double dt)
     m_x += cos(m_theta) * m_speed * dt ;
     m_y += sin(m_theta) * m_speed * dt ;
     m_theta += m_omega * dt ;
-}
-
-/// -----------------  PLANTINGROBOT  -----------------
-void PlantingRobot::set_seed()
-{
-    environment->add_seed_at(get_position_x(), get_position_y(), "Oak");
 }
