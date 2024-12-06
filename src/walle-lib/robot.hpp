@@ -4,12 +4,13 @@
 #include <string>
 
 #include "environment.hpp"
+#include "element.hpp"
 
-class Robot
+class Robot : public Element
 {
     /// tout le monde peut utiliser
 public:
-    Robot(Environment *e = nullptr) : environment(e) {};
+    Robot(Environment *e = nullptr) : Element(e) {};
 
     double get_speed() const;
     void set_speed(double linear_speed);
@@ -33,13 +34,15 @@ public:
     void run(double dt);
 
     /// retourne la capacity de la batterie.
-    virtual double get_battery_capacity() = 0;
+    double get_battery_capacity() const { return m_battery_capacity; }
 
     /// seulement moi peut utiliser
 private:
     double m_x{0}; /// position x
     double m_y{0}; /// position y
     double m_theta{0}; /// position angulaire
+
+    double m_battery_capacity{0}; /// capacité de la batterie
 
     double m_speed{0}; /// vitesse linéaire
     double m_omega{0}; /// vitesse angulaire
