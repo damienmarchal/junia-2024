@@ -12,3 +12,8 @@ Environment::Environment(double left, double right, double top, double bottom)
     _top = top;
     _bottom = bottom;
 }
+
+void Environment::add_element(Element *element)
+{
+    _elements++;
+}
