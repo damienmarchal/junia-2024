@@ -9,22 +9,22 @@ class Robot
 {
     /// tout le monde peut utiliser
 public:
-    Robot(Environment *e) : environment(e) {};
+    Robot(Environment *e = nullptr) : environment(e) {};
 
-    double get_speed();
+    double get_speed() const;
     void set_speed(double linear_speed);
 
-    double get_angular_speed();
+    double get_angular_speed() const;
     void set_angular_speed(double angular_speed);
    
     void stop();
 
-    double get_position_x() { return m_x; }
-    double get_position_y() { return m_y; }
+    double get_position_x() const { return m_x; }
+    double get_position_y() const { return m_y; }
 
-    double get_orientation() { return m_theta; }
+    double get_orientation() const { return m_theta; }
 
-    double get_size() { return m_size; }
+    double get_size() const { return m_size; }
     void set_size(double size) { m_size = size; }
     
 

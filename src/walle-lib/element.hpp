@@ -11,8 +11,8 @@ public:
 
     void set_position(double x, double y);
 
-    double get_x() { return m_x; }
-    double get_y() { return m_y; }
+    double get_x() const { return m_x; }
+    double get_y() const { return m_y; }
 
 
     double get_size() const { return m_size; }
