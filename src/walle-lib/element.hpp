@@ -1,5 +1,4 @@
-#ifndef ELEMENT_HPP
-#define ELEMENT_HPP
+#pragma once
 
 #include <cmath>
 #include <string>
@@ -33,5 +32,3 @@ private:
     Environment *environment{nullptr};
 
 };
-
-#endif // ELEMENT_HPP
