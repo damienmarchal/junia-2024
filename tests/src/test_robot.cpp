@@ -40,7 +40,6 @@ TEST(Robot, test_move_forward) {
     mon_robot.set_speed(0.5);
     mon_robot.run(0.01);
 
-    /// TODO n'oublie pas de finir ce test.
     EXPECT_NEAR(mon_robot.get_position_x(), 0.005, 0.00001);
     EXPECT_NEAR(mon_robot.get_position_y(), 0, 0.00001);
 }
