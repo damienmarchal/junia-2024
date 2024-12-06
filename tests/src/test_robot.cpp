@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <walle-lib/robot.hpp>
+#include "walle-lib/environnement.hpp"
 
 class MonRobotDeTest : public Robot
 {
@@ -36,8 +37,10 @@ TEST(Robot, test_move_forward) {
     MonRobotDeTest mon_robot{&e};
 
     mon_robot.set_angular_speed(0.5);
+    mon_robot.set_speed(0.5);
     mon_robot.run(0.01);
 
-    /// TODO n'oublie de finir ce test.
-    EXPECT_FALSE(true);
+    /// TODO n'oublie pas de finir ce test.
+    EXPECT_NEAR(mon_robot.get_position_x(), 0.005, 0.00001);
+    EXPECT_NEAR(mon_robot.get_position_y(), 0, 0.00001);
 }

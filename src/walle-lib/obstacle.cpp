@@ -3,36 +3,47 @@
 //
 
 #include "obstacle.hpp"
-#include <iostream>
+#include "environnement.hpp"
 
-void obstacle::createObstacleRand(double numberOfObstacle)
+void Element::set_length_element(double length)
 {
-    for(int i = 0; i < numberOfObstacle; i++) {
-        std::cout << "Création d'un obstacle de taille et position aléatoire" << std::endl;
-        double lengthObstacle = rand() % 10 + 1; // longueur entre 1 et 10 mètres
-        double widthObstacle = rand() % 10 + 1; // largeur entre 1 et 10 mètres
-        double xObstacle = rand() % (int) this->get_length() + 1;    // position x entre 0 et length mètres
-        double yObstacle = rand() % (int) this->get_width() + 1;     // position y entre 0 et width mètres
-    }
+    length_element = length;
 }
 
-void obstacle::setObstacle(double lengthObstacle, double widthObstacle, double xObstacle, double yObstacle)
+void Element::set_width_element(double width)
 {
-    std::cout << "Entrez la longueur de l'obstacle: ";
-    std::cin >> this->lengthObstacle;
-    std::cout << "Entrez la largeur de l'obstacle: ";
-    std::cin >> this->widthObstacle;
-    std::cout << "Entrez la position x de l'obstacle: ";
-    std::cin >> this->xObstacle;
-    std::cout << "Entrez la position y de l'obstacle: ";
-    std::cin >> this->yObstacle;
-
+    width_element = width;
 }
 
-void obstacle::setBase(double xBase, double yBase)
+void Element::set_x_element(double x)
 {
-    std::cout << "Entrez la  position x de la base: ";
-    std::cin >> this->xBase;
-    std::cout << "Entrez la  position y de la base: ";
-    std::cin >> this->yBase;
+    x_element = x;
 }
+
+void Element::set_y_element(double y)
+{
+    y_element = y;
+}
+
+double Element::get_length_element()
+{
+    return length_element;
+}
+
+double Element::get_width_element()
+{
+    return width_element;
+}
+
+double Element::get_x_element()
+{
+    return x_element;
+}
+
+double Element::get_y_element()
+{
+    return y_element;
+}
+
+// Définition de la variable statique
+int Element::next_id_e = 0;
