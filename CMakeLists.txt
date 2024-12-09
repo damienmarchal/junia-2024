@@ -13,6 +13,9 @@ add_library(walle-lib SHARED
             src/walle-lib/element.hpp
             src/walle-lib/robot.cpp
             src/walle-lib/robot.hpp
+            src/walle-lib/planting_robot.cpp
+            src/walle-lib/planting_robot.hpp
+            src/walle-lib/tree.hpp
             src/walle-lib/vector2.cpp
             src/walle-lib/vector2.hpp)
             
@@ -39,6 +42,7 @@ add_executable(all-tests
   tests/src/test_element.cpp
   tests/src/test_robot.cpp
   tests/src/test_vector2.cpp  
+  tests/src/test_planting_robot.cpp
 )
 
 target_link_libraries(
