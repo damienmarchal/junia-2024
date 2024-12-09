@@ -45,7 +45,5 @@ private:
     double m_speed{0}; /// vitesse linéaire
     double m_omega{0}; /// vitesse angulaire
 
-    double m_size{0}; /// taille du robot
-
 };
 
