@@ -6,8 +6,8 @@ class Environment;
 class Element
 {
 public:
-    Element(Environment *e = nullptr) : environment(e) {};
-    Element(Environment *e, double x, double y) : environment(e), m_x(x), m_y(y) {};
+    Element(Environment *e = nullptr);
+    Element(Environment *e, double x, double y);
 
     void set_position(double x, double y);
 
@@ -18,10 +18,10 @@ public:
     double get_size() const { return m_size; }
     void set_size(double size) { m_size = size; }
 
-private:
+protected:
     double m_x{0};
     double m_y{0};
-    double m_size{0};
+    double m_size{0}; // taille de l'élément (diamètre pour un cercle)
 
     // permet d'accéder à l'environnement
     Environment *environment{nullptr};

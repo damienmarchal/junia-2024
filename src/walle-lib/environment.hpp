@@ -1,6 +1,7 @@
 #pragma once 
 #include <cmath>
 #include <string>
+#include <vector>
 #include "element.hpp"
 #include "robot.hpp"
 
@@ -14,7 +15,8 @@ public:
     double top() const { return _top; }
     double bottom() const { return _bottom; }
 
-    int get_elements() const { return _elements; }
+    int get_elements() const { return _elements_list.size(); }
+    std::vector<Element *> get_elements_list() const { return _elements_list; }
     void add_element(Element *e);
 
 
@@ -24,5 +26,5 @@ private:
     double _top;
     double _bottom;
 
-    int _elements = 0;
+    std::vector<Element *> _elements_list;
 };

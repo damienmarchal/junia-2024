@@ -11,6 +11,7 @@ class Robot : public Element
     /// tout le monde peut utiliser
 public:
     Robot(Environment *e = nullptr) : Element(e) {};
+    Robot(Environment *e, double x, double y) : Element(e, x, y) {};
 
     double get_speed() const;
     void set_speed(double linear_speed);
@@ -20,14 +21,13 @@ public:
    
     void stop();
 
-    double get_position_x() const { return m_x; }
-    double get_position_y() const { return m_y; }
 
     double get_orientation() const { return m_theta; }
 
     double get_size() const { return m_size; }
     void set_size(double size) { m_size = size; }
-    
+
+    Element *get_closest_collision_element() const;    
 
     /// Met à jour la position interne à partir de la position(et angle),
     /// de la vitesse (et vitesse_angulaire) et de dt
@@ -38,8 +38,6 @@ public:
 
     /// seulement moi peut utiliser
 private:
-    double m_x{0}; /// position x
-    double m_y{0}; /// position y
     double m_theta{0}; /// position angulaire
 
     double m_battery_capacity{0}; /// capacité de la batterie
@@ -49,8 +47,5 @@ private:
 
     double m_size{0}; /// taille du robot
 
-    /// seulement moi et mes enfants peuvent utiliser
-protected:
-    Environment *environment{nullptr}; // pointeur
 };
 

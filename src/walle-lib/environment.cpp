@@ -15,5 +15,5 @@ Environment::Environment(double left, double right, double top, double bottom)
 
 void Environment::add_element(Element *element)
 {
-    _elements++;
+    _elements_list.push_back(element);
 }
