@@ -12,7 +12,22 @@ add_library(walle-lib SHARED
             src/walle-lib/robot.cpp
             src/walle-lib/robot.hpp
             src/walle-lib/vector2.cpp
-            src/walle-lib/vector2.hpp)
+            src/walle-lib/vector2.hpp
+            src/walle-lib/element.hpp
+            src/walle-lib/element.cpp
+            src/walle-lib/hole.cpp
+            src/walle-lib/hole.hpp
+            src/walle-lib/tree.cpp
+            src/walle-lib/tree.hpp
+            src/walle-lib/chargingStation.cpp
+            src/walle-lib/chargingStation.hpp
+            src/walle-lib/diggingRobot.cpp
+            src/walle-lib/diggingRobot.hpp
+            src/walle-lib/plantingRobot.cpp
+            src/walle-lib/plantingRobot.hpp
+            src/walle-lib/wateringRobot.cpp
+            src/walle-lib/wateringRobot.hpp
+            )
 
 target_include_directories(walle-lib
   PUBLIC
@@ -36,6 +51,13 @@ add_executable(all-tests
   tests/src/test_robot.cpp
   tests/src/test_vector2.cpp
   tests/src/test_environnement.cpp
+  tests/src/test_element.cpp
+  tests/src/test_hole.cpp
+  tests/src/test_tree.cpp
+  tests/src/test_chargingStation.cpp
+  tests/src/test_diggingRobot.cpp
+  tests/src/test_plantingRobot.cpp
+  tests/src/test_wateringRobot.cpp
 )
 
 target_link_libraries(

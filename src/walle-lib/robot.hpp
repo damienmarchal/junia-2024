@@ -1,45 +1,47 @@
 #pragma once 
-#include <cmath>
-#include <string>
 
 #include "environnement.hpp"
+#include "element.hpp"
 
-/// Décrire un objet.
-class Robot
+namespace RobotEnergyProperties {
+    constexpr double MINIMUM_POWER_CONSUMPTION = 5; // W -> the robot consumes at least 5W for its electronic components
+    constexpr double MOVING_POWER_CONSUMPTION = 10; // W/m/s/kg -> the robot consumes 10W per second for each m/s of linear speed and for each kg of mass
+    constexpr double LOW_BATTERY_THRESHOLD = 0.1; // ratio
+}
+
+template <typename T>
+T min(T a, T b) {
+    return a < b ? a : b;
+}
+
+/// Generic robot class inheriting from MovableElement (can move in the environment).
+class Robot : public MovableElement
 {
-/// tout le monde peut utiliser (même l'extérieur
 public:
-    Robot(Environment* e) : environment(e) {};
+    Robot(Environment* e=nullptr, double mass=10, double size=0.5);
 
-    void set_speed(double linear_speed);              ///
-    void set_angular_speed(double angular_speed);    ///
-
-    double get_speed();
-    double get_angular_speed();
-
+    /// Stops the robot.
     void stop();
 
-    double get_position_x(){ return m_x; }
-    double get_position_y(){ return m_y; }
+    enum STATUS { OK, LOW_BATTERY, EMPTY_BATTERY };
+    /// update the robot's position and orientation according to its linear and angular speeds.
+    int update(double dt) override;
 
-    /// Met à jour la position interne à partir de la position(et angle),
-    /// de la vitesse (et vitesse_angulaire) et de dt
-    void run(double dt);
+    double get_battery_ratio() const { return battery_ / battery_capacity_; }
 
-    /// retourne la capacity de la batterie.
-    virtual double get_battery_capacity() = 0;
-
-/// moi et mes enfants on peut y accéder
-private:
-    double m_x{0};      /// attributs x = x * orientation * vitesse * dt
-    double m_y{0};
-    double m_theta{0};  /// position angulaire
-
-    double m_speed{0};/// vitesse linéaire
-    double m_omega{0};  /// vitesse angulaire
+    const double get_battery() const { return battery_; }
+    void set_battery(double battery) { battery_ = min(battery, battery_capacity_); }
 
 protected:
-    Environment* environment {nullptr}; //pointeur
+    virtual int update_battery(double dt);
+
+    double battery_capacity_ = 1e5; // J
+    double battery_ = battery_capacity_;
+    static unsigned int id_counter;
+
 };
 
-
+// need to implement the following classes:
+// class DiggingRobot : public Robot
+// class PantingRobot : public Robot
+// class WateringRobot : public Robot
