@@ -1,19 +1,11 @@
 #include <gtest/gtest.h>
 #include <walle-lib/robot.hpp>
 
-class MonRobotDeTest : public Robot
-{
-public:
-    MonRobotDeTest(Environment *e) : Robot(e) {};
-    MonRobotDeTest(Environment *e, double x, double y) : Robot(e, x, y) {};
-    double get_battery_capacity() { return 0.5; }
-};
-
 // Validates the behavior of the constructors
 TEST(Robot, test_set_speed)
 {
     Environment e{0.0, 10.0, 0.0, 10.0};
-    MonRobotDeTest mon_robot{&e};
+    Robot mon_robot{&e};
 
     mon_robot.set_speed(0.5);
     EXPECT_NEAR(mon_robot.get_speed(), 0.5, 0.00001);
@@ -25,7 +17,7 @@ TEST(Robot, test_set_speed)
 TEST(Robot, test_angular_speed)
 {
     Environment e{0.0, 10.0, 0.0, 10.0};
-    MonRobotDeTest mon_robot{&e};
+    Robot mon_robot{&e};
 
     mon_robot.set_angular_speed(0.5);
     EXPECT_NEAR(mon_robot.get_angular_speed(), 0.5, 0.00001);
@@ -37,7 +29,7 @@ TEST(Robot, test_angular_speed)
 TEST(Robot, test_move_forward)
 {
     Environment e{0.0, 10.0, 0.0, 10.0};
-    MonRobotDeTest mon_robot{&e};
+    Robot mon_robot{&e};
     float x0 = mon_robot.get_x();
     float y0 = mon_robot.get_y();
     mon_robot.set_speed(0.5);
@@ -55,7 +47,7 @@ TEST(Robot, test_move_forward)
 TEST(Robot, test_get_battery_capacity)
 {
     Environment e{0.0, 10.0, 0.0, 10.0};
-    MonRobotDeTest mon_robot{&e};
+    Robot mon_robot{&e};
 
     EXPECT_NEAR(mon_robot.get_battery_capacity(), 0.5, 0.00001);
 }
@@ -63,7 +55,7 @@ TEST(Robot, test_get_battery_capacity)
 TEST(Robot, test_set_size)
 {
     Environment e{0.0, 10.0, 0.0, 10.0};
-    MonRobotDeTest mon_robot{&e};
+    Robot mon_robot{&e};
 
     mon_robot.set_size(0.5);
     EXPECT_NEAR(mon_robot.get_size(), 0.5, 0.00001);
@@ -75,7 +67,7 @@ TEST(Robot, test_set_size)
 TEST(Robot, test_get_closest_collision_element)
 {
     Environment e{0.0, 10.0, 0.0, 10.0};
-    MonRobotDeTest mon_robot_1{&e, 1.0, 1.0};
+    Robot mon_robot_1{&e, 1.0, 1.0};
     Element element_1{&e, 1.0, 1.0};
 
     mon_robot_1.set_size(0.5);
@@ -94,7 +86,7 @@ TEST(Robot, test_get_closest_collision_element)
 TEST(Robot, test_collision)
 {
     Environment e{0.0, 10.0, 0.0, 10.0};
-    MonRobotDeTest mon_robot_1{&e, 2.0, 0.0};
+    Robot mon_robot_1{&e, 2.0, 0.0};
     Element element_1{&e, 0.0, 0.0};
 
     mon_robot_1.set_size(1);
