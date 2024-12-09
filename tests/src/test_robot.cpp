@@ -49,6 +49,7 @@ TEST(Robot, test_get_battery_capacity)
     Environment e{0.0, 10.0, 0.0, 10.0};
     Robot mon_robot{&e};
 
+    mon_robot.set_battery_capacity(0.5);
     EXPECT_NEAR(mon_robot.get_battery_capacity(), 0.5, 0.00001);
 }
 
