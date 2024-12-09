@@ -40,6 +40,16 @@ void Robot::run(double dt, bool collision_gestion)
     // gestion des collisions
 }
 
+void Robot::set_battery_capacity(double battery_capacity)
+{
+    m_battery_capacity = battery_capacity;
+}
+
+double Robot::get_battery_capacity() const
+{
+    return m_battery_capacity;
+}
+
 Element *Robot::get_closest_collision_element() const
 {
     std::vector<Element *> elements = environment->get_elements_list();

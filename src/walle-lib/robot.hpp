@@ -37,8 +37,9 @@ public:
 
     void gestion_collision();
 
+    void set_battery_capacity(double battery_capacity);
     /// retourne la capacity de la batterie.
-    double get_battery_capacity() const { return m_battery_capacity; }
+    double get_battery_capacity() const;
 
     /// seulement moi peut utiliser
 private:
