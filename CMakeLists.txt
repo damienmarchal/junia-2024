@@ -16,6 +16,7 @@ add_library(walle-lib SHARED
             src/walle-lib/planting_robot.cpp
             src/walle-lib/planting_robot.hpp
             src/walle-lib/tree.hpp
+            src/walle-lib/obstacle.hpp
             src/walle-lib/vector2.cpp
             src/walle-lib/vector2.hpp)
             
