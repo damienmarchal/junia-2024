@@ -90,3 +90,26 @@ TEST(Robot, test_get_closest_collision_element)
     element_1.set_position(10.0, 10.0);
     EXPECT_EQ(mon_robot_1.get_closest_collision_element(), nullptr);
 }
+
+TEST(Robot, test_collision)
+{
+    Environment e{0.0, 10.0, 0.0, 10.0};
+    MonRobotDeTest mon_robot_1{&e, 2.0, 0.0};
+    Element element_1{&e, 0.0, 0.0};
+
+    mon_robot_1.set_size(1);
+    element_1.set_size(2);
+
+    mon_robot_1.set_speed(1.0);
+    mon_robot_1.set_orientation(3.14159);
+
+    mon_robot_1.run(1.0, false);
+
+    EXPECT_NEAR(mon_robot_1.get_x(), 1.0, 0.00001);
+
+    mon_robot_1.gestion_collision();
+
+    EXPECT_NEAR(mon_robot_1.get_x(), 1.5, 0.00001);
+
+    EXPECT_NEAR(mon_robot_1.get_speed(), 0.0, 0.00001);
+}

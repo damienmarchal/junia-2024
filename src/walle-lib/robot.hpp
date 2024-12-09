@@ -18,6 +18,8 @@ public:
 
     double get_angular_speed() const;
     void set_angular_speed(double angular_speed);
+
+    void set_orientation(double theta);
    
     void stop();
 
@@ -31,7 +33,9 @@ public:
 
     /// Met à jour la position interne à partir de la position(et angle),
     /// de la vitesse (et vitesse_angulaire) et de dt
-    void run(double dt);
+    void run(double dt, bool collision_gestion = true);
+
+    void gestion_collision();
 
     /// retourne la capacity de la batterie.
     double get_battery_capacity() const { return m_battery_capacity; }

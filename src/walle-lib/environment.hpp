@@ -15,6 +15,11 @@ public:
     double top() const { return _top; }
     double bottom() const { return _bottom; }
 
+    double get_left() const { return _left; }
+    double get_right() const { return _right; }
+    double get_top() const { return _top; }
+    double get_bottom() const { return _bottom; }
+
     int get_elements() const { return _elements_list.size(); }
     std::vector<Element *> get_elements_list() const { return _elements_list; }
     void add_element(Element *e);

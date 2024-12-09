@@ -20,17 +20,24 @@ void Robot::set_angular_speed(double angular_speed)
     m_omega = angular_speed;
 }
 
+void Robot::set_orientation(double theta)
+{
+    m_theta = theta;
+}
+
 void Robot::stop()
 {
     set_speed(0);
     set_angular_speed(0);
 }
 
-void Robot::run(double dt)
+void Robot::run(double dt, bool collision_gestion)
 {
     m_x += cos(m_theta) * m_speed * dt;
     m_y += sin(m_theta) * m_speed * dt;
     m_theta += m_omega * dt;
+
+    // gestion des collisions
 }
 
 Element *Robot::get_closest_collision_element() const
@@ -58,4 +65,22 @@ Element *Robot::get_closest_collision_element() const
     }
 
     return closest_element;
+}
+
+void Robot::gestion_collision()
+{
+    Element *closest_element = get_closest_collision_element();
+    if (closest_element == nullptr)
+        return;
+    stop();
+
+    double dx = closest_element->get_x() - m_x;
+    double dy = closest_element->get_y() - m_y;
+    double distance = sqrt(dx * dx + dy * dy);
+    double overlap = (closest_element->get_size() + m_size) / 2 - distance;
+    if (overlap > 0)
+    {
+        m_x -= dx / distance * overlap;
+        m_y -= dy / distance * overlap;
+    }
 }
