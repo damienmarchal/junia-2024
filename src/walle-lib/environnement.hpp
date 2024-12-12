@@ -3,13 +3,13 @@
 #include <string>
 
 
-class __declspec( dllexport ) Environment
+class Environment
 {
 public:
-    Environment(double left=-1, double right=-1, double top=-1, double bottom=1);
+    Environment();
+    void affichage_environment();
 
-    double left(); //{ return -1; }
-    double right() { return -1; }
-    double top() { return -1; }
-    double bottom() { return -1; }
+    int a = 1;
+
 };
+

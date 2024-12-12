@@ -12,7 +12,9 @@ add_library(walle-lib SHARED
             src/walle-lib/robot.cpp
             src/walle-lib/robot.hpp
             src/walle-lib/vector2.cpp
-            src/walle-lib/vector2.hpp)
+            src/walle-lib/vector2.hpp
+            src/walle-lib/map_environnement.cpp
+            src/walle-lib/map_environnement.hpp)
 
 target_include_directories(walle-lib
   PUBLIC
