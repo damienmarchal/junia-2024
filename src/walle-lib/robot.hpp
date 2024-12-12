@@ -1,6 +1,5 @@
 #pragma once 
-#include <cmath>
-#include <string>
+
 
 #include "environnement.hpp"
 
@@ -9,31 +8,37 @@ class Robot
 {
 /// tout le monde peut utiliser (même l'extérieur
 public:
-    Robot(Environment* e) : environment(e) {};
+    Robot();
+    ~Robot();
 
     void set_speed(double linear_speed);              ///
     void set_angular_speed(double angular_speed);    ///
+    void set_position(int x, int y);
 
-    double get_speed();
-    double get_angular_speed();
 
+    double get_speed() const;
+    double get_angular_speed() const;
+
+    void planter();
     void stop();
 
-    double get_position_x(){ return m_x; }
-    double get_position_y(){ return m_y; }
+    double get_position_x() const { return m_x; }
+    double get_position_y() const { return m_y; }
 
     /// Met à jour la position interne à partir de la position(et angle),
     /// de la vitesse (et vitesse_angulaire) et de dt
     void run(double dt);
 
     /// retourne la capacity de la batterie.
-    virtual double get_battery_capacity() = 0;
+    virtual double get_battery_capacity() const {
+        return (1);
+    };
 
 /// moi et mes enfants on peut y accéder
 private:
-    double m_x{0};      /// attributs x = x * orientation * vitesse * dt
-    double m_y{0};
-    double m_theta{0};  /// position angulaire
+    double m_x;      /// attributs x = x * orientation * vitesse * dt
+    double m_y;
+    double m_theta;  /// position angulaire
 
     double m_speed{0};/// vitesse linéaire
     double m_omega{0};  /// vitesse angulaire
